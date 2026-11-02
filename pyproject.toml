@@ -1,0 +1,12 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "aether"
+version = "0.1.0"
+description = "Spacecraft Systems and Communications Simulation Platform"
+requires-python = ">=3.14"
+
+[tool.setuptools.packages.find]
+where = ["src"]
