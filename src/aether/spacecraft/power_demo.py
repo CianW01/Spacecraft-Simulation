@@ -34,8 +34,11 @@ print("------------------------")
 for minute in range(1, 11):
 
     telemetry = engine.advance(
-        environment={"sunlight_fraction": 1.0}
-    )
+    subsystem_inputs={
+        "power": {"sunlight_fraction": 1.0},
+        "thermal": {"sunlight_fraction": 1.0}
+    }
+)
 
     power_data = telemetry["power"]
     thermal_data = telemetry["thermal"]
@@ -59,8 +62,11 @@ previous_safe_mode = spacecraft_power.safe_mode
 for minute in range(1, 201):
 
     telemetry = engine.advance(
-        environment={"sunlight_fraction": 0.0}
-    )
+    subsystem_inputs={
+        "power": {"sunlight_fraction": 0.0},
+        "thermal": {"sunlight_fraction": 0.0}
+    }
+)
 
     power_data = telemetry["power"]
     thermal_data = telemetry["thermal"]
@@ -86,8 +92,11 @@ print("-------------------------")
 for minute in range(1, 71):
 
     telemetry = engine.advance(
-        environment={"sunlight_fraction": 1.0}
-    )
+    subsystem_inputs={
+        "power": {"sunlight_fraction": 1.0},
+        "thermal": {"sunlight_fraction": 1.0}
+    }
+)
 
     power_data = telemetry["power"]
     thermal_data = telemetry["thermal"]
